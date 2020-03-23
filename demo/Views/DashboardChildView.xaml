@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="demo.Views.DashboardChildView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:demo.Views"
+             mc:Ignorable="d" Background="DarkBlue"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <!-- Row 1 -->
+        <TextBlock Text="{Binding Path=FullName, Mode=OneWay}"
+                   Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+
+        <!-- Row 2-->
+        <TextBox MinWidth="100" Grid.Row="2" Grid.Column="1" x:Name="FirstName"/>
+        <TextBox MinWidth="100" Grid.Row="2" Grid.Column="2" x:Name="LastName"/>
+
+        <!--Row 3-->
+        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="People"
+                  SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}"
+                  DisplayMemberPath="FirstName" />
+        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName" />
+
+        <!--Row 4-->
+        <Button x:Name="ClearText" Grid.Row="4" Grid.Column="1" Content="Clear Name"/>
+    </Grid>
+</UserControl>

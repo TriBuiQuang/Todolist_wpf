@@ -1,0 +1,17 @@
+﻿<Application x:Class="demo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:demo">
+    <!--Dau tien app no se chay thang nay dau tien-->
+    <Application.Resources>
+        <!-- Calliburn.micro now handle startup-->
+        <!-- Minh dang dung calliburn.micro nen minh muon start tu bootstrapper-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="Bootstrapper" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
