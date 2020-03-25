@@ -72,10 +72,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\ToDoModel.cs" />
     <Compile Include="ViewModels\DashboardChildViewModel.cs" />
     <Compile Include="ViewModels\LoginChildViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegistrationChildViewModel.cs" />
+    <Compile Include="ViewModels\TodoChildViewModel.cs" />
     <Compile Include="Views\DashboardChildView.xaml.cs">
       <DependentUpon>DashboardChildView.xaml</DependentUpon>
     </Compile>
