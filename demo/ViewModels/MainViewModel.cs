@@ -28,10 +28,15 @@ namespace demo.ViewModels
 		{
 			ActivateItem(new LoginChildViewModel());
 		}
-		
+
 		public void LoadPageCalendar()
 		{
 			ActivateItem(new CalendarChildViewModel());
+		}
+
+		public void LoadPageTodo()
+		{
+			ActivateItem(new TodoChildViewModel());
 		}
 	}
 }

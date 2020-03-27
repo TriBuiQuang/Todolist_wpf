@@ -94,6 +94,9 @@
     <Compile Include="Views\RegistrationChildView.xaml.cs">
       <DependentUpon>RegistrationChildView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TodoChildView.xaml.cs">
+      <DependentUpon>TodoChildView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegistrationChildView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TodoChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

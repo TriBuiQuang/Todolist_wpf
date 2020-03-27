@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Working\wpf\demo\demo\App.xaml
-51690728029
+6-2070630430
 
-19-531025047
+20-2096121704
 1211560946735
-Views\CalendarChildView.xaml;Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;
+Views\CalendarChildView.xaml;Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;Views\TodoChildView.xaml;
 
 True
 

@@ -23,6 +23,7 @@
             <Button x:Name="LoadPageRegistration">Registration</Button>
             <Button x:Name="LoadPageLogin">Login</Button>
             <Button x:Name="LoadPageCalendar">Calendar</Button>
+            <Button x:Name="LoadPageTodo">Todo</Button>
         </StackPanel>
        
         <!--Column 2-->
