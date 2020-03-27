@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Working\wpf\demo\demo\obj\Debug\
+D:\demo_wpf\demo\obj\Debug\
 demo
 none
 false
 DEBUG;TRACE
-D:\Working\wpf\demo\demo\App.xaml
-4-303504366
+D:\demo_wpf\demo\App.xaml
+5230104471
 
-161118750942
-1211560946735
-Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;
+17-446345715
+121493179745
+Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;Views\TodoChildView.xaml;
 
 False
 

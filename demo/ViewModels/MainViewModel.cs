@@ -28,5 +28,9 @@ namespace demo.ViewModels
 		{
 			ActivateItem(new LoginChildViewModel());
 		}
+		public void LoadPageTodo()
+		{
+			ActivateItem(new TodoChildViewModel());
+		}
 	}
 }
