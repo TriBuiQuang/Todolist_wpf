@@ -73,11 +73,15 @@
     </Compile>
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\ToDoModel.cs" />
+    <Compile Include="ViewModels\CalendarChildViewModel.cs" />
     <Compile Include="ViewModels\DashboardChildViewModel.cs" />
     <Compile Include="ViewModels\LoginChildViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegistrationChildViewModel.cs" />
     <Compile Include="ViewModels\TodoChildViewModel.cs" />
+    <Compile Include="Views\CalendarChildView.xaml.cs">
+      <DependentUpon>CalendarChildView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DashboardChildView.xaml.cs">
       <DependentUpon>DashboardChildView.xaml</DependentUpon>
     </Compile>
@@ -121,6 +125,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\CalendarChildView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DashboardChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

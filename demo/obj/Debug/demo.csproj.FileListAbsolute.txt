@@ -29,3 +29,5 @@ D:\Working\wpf\demo\demo\obj\Debug\demo.csproj.CopyComplete
 D:\Working\wpf\demo\demo\obj\Debug\demo.exe
 D:\Working\wpf\demo\demo\obj\Debug\demo.pdb
 D:\Working\wpf\demo\demo\obj\Debug\demo.csproj.CoreCompileInputs.cache
+D:\Working\wpf\demo\demo\obj\Debug\Views\CalendarChildView.g.cs
+D:\Working\wpf\demo\demo\obj\Debug\Views\CalendarChildView.baml
