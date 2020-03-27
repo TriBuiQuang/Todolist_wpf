@@ -36,6 +36,7 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
@@ -45,6 +46,9 @@
                         <TextBlock Text="{Binding Id}"/>
                         <TextBlock Grid.Column="1" Text="{Binding Name}"/>
                         <TextBlock Grid.Column="2" Text="{Binding Description}"/>
+                        <TextBlock Grid.Column="3" Text="{Binding CreatedDate}"/>
+                        <TextBlock Grid.Column="4" Text="{Binding UpdatedDate}"/>
+                        <CheckBox Grid.Column="5" IsChecked="{Binding Complete, Mode=TwoWay}" />
                     </Grid>
                    
                 </DataTemplate>
@@ -57,10 +61,8 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="*" MinWidth="80" />
             </Grid.ColumnDefinitions>
-            <TextBox />
-            <Button Grid.Column="1" Content="Add Task"/>
+            <TextBox Text="{Binding Todo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button x:Name="AddTodo" Grid.Column="1" Content="Add Task"/>
         </Grid>
-
-        
     </Grid>
 </UserControl>

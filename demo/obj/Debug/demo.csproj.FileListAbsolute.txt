@@ -68,3 +68,5 @@ D:\demo_wpf\demo\obj\Debug\Views\TodoChildView.baml
 >>>>>>> 49c2a01698e6c1037acf8c1a6fcb2ffe4dedca12
 D:\Working\wpf\demo\demo\obj\Debug\Views\TodoChildView.g.cs
 D:\Working\wpf\demo\demo\obj\Debug\Views\TodoChildView.baml
+D:\demo_wpf\demo\obj\Debug\Views\CalendarChildView.g.cs
+D:\demo_wpf\demo\obj\Debug\Views\CalendarChildView.baml

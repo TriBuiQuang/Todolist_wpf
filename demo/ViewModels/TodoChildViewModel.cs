@@ -11,7 +11,14 @@ namespace demo.ViewModels
     class TodoChildViewModel : Screen
 	{
 		private BindableCollection<ToDoModel> _toDo = new BindableCollection<ToDoModel>();
+		private string _name;
+		private string _description;
+		private int _id;
+		private bool _complete;
+		private DateTime _createdDate;
+		private DateTime _updatedDate;
 		private ToDoModel _toDoList;
+
 
 		public TodoChildViewModel()
 		{
@@ -24,9 +31,7 @@ namespace demo.ViewModels
 		{
 			get { return _toDo; }
 			set { _toDo = value; }
-		}
-
-		private string _name;
+		}	
 
 		public string Name
 		{
@@ -34,20 +39,41 @@ namespace demo.ViewModels
 			set { _name = value; }
 		}
 
-		private string _description;
+		public  DateTime CreatedDate
+		{
+			get { return _createdDate; }
+			set { _createdDate = value; }
+		}
+
+		
+		public DateTime UpdatedDate
+		{
+			get { return _updatedDate; }
+			set { _updatedDate = value; }
+		}
 
 		public string Description
 		{
 			get { return _description; }
 			set { _description = value; }
-		}
-
-		private int _id;
+		}	
 
 		public int Id
 		{
 			get { return _id; }
 			set { _id = value; }
+		}
+
+		public bool Complete
+		{
+			get { return _complete; }
+			set { _complete = value; }
+		}
+
+
+		public void AddTodo()
+		{
+			ToDo.Add(new ToDoModel { Id = 1, Name = "Task1", Complete = true, Description = "Testing todo 1", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now });
 		}
 
 
