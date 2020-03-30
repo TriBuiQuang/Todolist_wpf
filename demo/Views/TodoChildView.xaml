@@ -61,7 +61,8 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="*" MinWidth="80" />
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding Todo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox 
+                x:Name="Description"/>
             <Button x:Name="AddTodo" Grid.Column="1" Content="Add Task"/>
         </Grid>
     </Grid>

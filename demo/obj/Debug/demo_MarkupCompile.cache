@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\demo_wpf\demo\obj\Debug\
+D:\Working\wpf\demo\demo\obj\Debug\
 demo
 none
 false
 DEBUG;TRACE
-D:\demo_wpf\demo\App.xaml
+D:\Working\wpf\demo\demo\App.xaml
 6-2070630430
 
 19901240613
-121493179745
+1211560946735
 Views\CalendarChildView.xaml;Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;Views\TodoChildView.xaml;
 
 False

@@ -55,7 +55,7 @@ namespace demo.ViewModels
 		public string Description
 		{
 			get { return _description; }
-			set { _description = value; }
+			set { _description = value; NotifyOfPropertyChange(() => Description); }
 		}	
 
 		public int Id
@@ -71,9 +71,18 @@ namespace demo.ViewModels
 		}
 
 
-		public void AddTodo()
+		public void AddTodo(string description)
 		{
-			ToDo.Add(new ToDoModel { Id = 1, Name = "Task1", Complete = true, Description = "Testing todo 1", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now });
+			int MaxId = _toDo.Max(x => x.Id) + 1;
+			ToDo.Add(new ToDoModel { 
+				Id = MaxId , 
+				Name = "Task" + MaxId, 
+				Complete = false, 
+				Description = description,
+				CreatedDate = DateTime.Now, 
+				UpdatedDate = DateTime.Now 
+			});
+			Description = "";
 		}
 
 
