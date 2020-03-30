@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:demo.Views"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Background="#FF2C2A2A" Foreground="White" FontSize="20"
         Title="Todo list" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,11 +19,11 @@
         <!--Column 1-->
         <!--x:Name="LoadPageDashBoard" is binding to ViewModels-->
         <StackPanel>
-            <Button x:Name="LoadPageDashBoard">DashBoard</Button>
-            <Button x:Name="LoadPageRegistration">Registration</Button>
-            <Button x:Name="LoadPageLogin">Login</Button>
-            <Button x:Name="LoadPageCalendar">Calendar</Button>
-            <Button x:Name="LoadPageTodo">Todo</Button>
+            <Button x:Name="LoadPageDashBoard" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">DashBoard</Button>
+            <Button x:Name="LoadPageRegistration" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">Registration</Button>
+            <Button x:Name="LoadPageLogin" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat" >Login</Button>
+            <Button x:Name="LoadPageCalendar" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">Calendar</Button>
+            <Button x:Name="LoadPageTodo" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">Todo</Button>
         </StackPanel>
        
         <!--Column 2-->

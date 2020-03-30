@@ -96,6 +96,7 @@
             <TextBlock Text="{Binding Path=DateOfMonth[40]}" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="6" Foreground="#FF6E6E6E" />
 
             <TextBlock Text="{Binding Path=DateOfMonth[41]}" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="6" Foreground="#FF6E6E6E" />
+            
         </Grid>
     </Grid>
 </UserControl>
