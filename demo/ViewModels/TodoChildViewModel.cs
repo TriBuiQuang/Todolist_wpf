@@ -73,6 +73,7 @@ namespace demo.ViewModels
 
 		public void AddTodo()
 		{
+			int MaxId = _toDo.Max(x => x.Id);
 			ToDo.Add(new ToDoModel { Id = 1, Name = "Task1", Complete = true, Description = "Testing todo 1", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now });
 		}
 
