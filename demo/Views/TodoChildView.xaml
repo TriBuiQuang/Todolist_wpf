@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:demo.Views"
-             mc:Ignorable="d" Background="White"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" Background="Black" Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -25,7 +27,7 @@
         <TextBlock Text="To Do:" FontSize="24" 
                    Grid.Column="1" Grid.Row="1" FontWeight="Bold"/>
         <!--Row 2-->
-        <ItemsControl Grid.Row="2" Grid.Column="1" x:Name="listTodo" ItemsSource="{Binding ToDo}">
+        <ItemsControl Grid.Row="2" Grid.Column="1" x:Name="listTodo" ItemsSource="{Binding ToDo, UpdateSourceTrigger=PropertyChanged}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical"/>
@@ -41,14 +43,27 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding Id}"/>
                         <TextBlock Grid.Column="1" Text="{Binding Name}"/>
-                        <TextBlock Grid.Column="2" Text="{Binding Description}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
                         <TextBlock Grid.Column="3" Text="{Binding CreatedDate}"/>
                         <TextBlock Grid.Column="4" Text="{Binding UpdatedDate}"/>
                         <CheckBox Grid.Column="5" IsChecked="{Binding Complete, Mode=TwoWay}" />
+                        
+                        <Button Grid.Column="6" Content="Edit"
+                                cal:Message.Attach="EditTodo($dataContext)" />
+                        <!--<Button 
+                            Grid.Column="7"
+                            Content="{Binding Id}"
+                            Command="{Binding DeleteTodo}"
+                            CommandParameter="{Binding Id}"
+                        />-->
+                        <Button Grid.Column="7" Content="Remove"
+                                cal:Message.Attach="DeleteTodo($dataContext)" />
                     </Grid>
                    
                 </DataTemplate>
@@ -62,7 +77,7 @@
                 <ColumnDefinition Width="*" MinWidth="80" />
             </Grid.ColumnDefinitions>
             <TextBox 
-                x:Name="Description"/>
+                x:Name="TxtAddBlock"/>
             <Button x:Name="AddTodo" Grid.Column="1" Content="Add Task"/>
         </Grid>
     </Grid>

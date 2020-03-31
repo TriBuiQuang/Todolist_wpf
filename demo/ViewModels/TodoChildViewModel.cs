@@ -1,14 +1,11 @@
 ﻿using Caliburn.Micro;
 using demo.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace demo.ViewModels
 {
-    class TodoChildViewModel : Screen
+	class TodoChildViewModel : Screen
 	{
 		private BindableCollection<ToDoModel> _toDo = new BindableCollection<ToDoModel>();
 		private string _name;
@@ -22,7 +19,7 @@ namespace demo.ViewModels
 
 		public TodoChildViewModel()
 		{
-			ToDo.Add(new ToDoModel { Id= 1, Name="Task1", Complete=true, Description = "Testing todo 1" , CreatedDate=DateTime.Now, UpdatedDate= DateTime.Now });
+			ToDo.Add(new ToDoModel { Id = 1, Name = "Task1", Complete = true, Description = "Testing todo 1", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now });
 			ToDo.Add(new ToDoModel { Id = 2, Name = "Task2", Complete = false, Description = "Testing todo 2", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now });
 			ToDo.Add(new ToDoModel { Id = 3, Name = "Task3", Complete = false, Description = "Testing todo 3", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now });
 		}
@@ -31,7 +28,7 @@ namespace demo.ViewModels
 		{
 			get { return _toDo; }
 			set { _toDo = value; }
-		}	
+		}
 
 		public string Name
 		{
@@ -39,13 +36,13 @@ namespace demo.ViewModels
 			set { _name = value; }
 		}
 
-		public  DateTime CreatedDate
+		public DateTime CreatedDate
 		{
 			get { return _createdDate; }
 			set { _createdDate = value; }
 		}
 
-		
+
 		public DateTime UpdatedDate
 		{
 			get { return _updatedDate; }
@@ -56,7 +53,7 @@ namespace demo.ViewModels
 		{
 			get { return _description; }
 			set { _description = value; NotifyOfPropertyChange(() => Description); }
-		}	
+		}
 
 		public int Id
 		{
@@ -70,19 +67,37 @@ namespace demo.ViewModels
 			set { _complete = value; }
 		}
 
+		public string TxtAddBlock { get; set; }
 
-		public void AddTodo(string description)
+		public void AddTodo(string txtAddBlock)
 		{
-			int MaxId = _toDo.Max(x => x.Id) + 1;
-			ToDo.Add(new ToDoModel { 
-				Id = MaxId , 
-				Name = "Task" + MaxId, 
-				Complete = false, 
-				Description = description,
-				CreatedDate = DateTime.Now, 
-				UpdatedDate = DateTime.Now 
+			int MaxId = 1;
+			if (_toDo.Count > 0) MaxId = _toDo.Max(x => x.Id) + 1;
+
+			ToDo.Add(new ToDoModel
+			{
+				Id = MaxId,
+				Name = "Task" + MaxId,
+				Complete = false,
+				Description = txtAddBlock,
+				CreatedDate = DateTime.Now,
+				UpdatedDate = DateTime.Now
 			});
-			Description = "";
+			TxtAddBlock = "";
+			NotifyOfPropertyChange(() => TxtAddBlock);
+		}
+
+		public void EditTodo(ToDoModel todo)
+		{
+			todo.Description = "hello";
+			Description = "hello";
+			ToDo.Refresh();
+
+		}
+
+		public void DeleteTodo(ToDoModel todo)
+		{
+			ToDo.Remove(todo);
 		}
 
 

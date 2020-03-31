@@ -70,3 +70,5 @@ D:\Working\wpf\demo\demo\obj\Debug\Views\TodoChildView.g.cs
 D:\Working\wpf\demo\demo\obj\Debug\Views\TodoChildView.baml
 D:\demo_wpf\demo\obj\Debug\Views\CalendarChildView.g.cs
 D:\demo_wpf\demo\obj\Debug\Views\CalendarChildView.baml
+D:\Working\wpf\demo\demo\obj\Debug\Views\TodoModalView.g.cs
+D:\Working\wpf\demo\demo\obj\Debug\Views\TodoModalView.baml
