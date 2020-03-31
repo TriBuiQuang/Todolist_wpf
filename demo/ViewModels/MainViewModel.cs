@@ -38,5 +38,10 @@ namespace demo.ViewModels
 		{
 			ActivateItem(new TodoChildViewModel());
 		}
+
+		public void LoadPageCalculator()
+		{
+			ActivateItem(new CalculatorChildViewModel());
+		}
 	}
 }
