@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:demo.Views"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              FontWeight="Bold"
@@ -29,18 +31,18 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1"
+        <TextBlock x:Name="Expression" 
+                Grid.Column="1"
                 Grid.Row="1"
                 Grid.ColumnSpan="4"
-                Text=""
                 Height="80"
                 FontSize="50"
                 Foreground="White"
                 Background="Black"/>
-        <TextBlock Grid.Column="1"
+        <TextBlock x:Name="Result"
+                Grid.Column="1"
                 Grid.Row="2"
                 Grid.ColumnSpan="4"
-                Text="0"
                 Height="80"
                 FontSize="50"
                 TextAlignment="Right"
@@ -48,17 +50,20 @@
                 Background="Black"/>
 
         <!--Row 3-->
-        <Button Grid.Column="1"
+        <Button x:Name="ACButton"
+                Grid.Column="1"
                 Grid.Row="3"
                 Content="AC" 
                 Width="75"
                 Height="75"/>
-        <Button Grid.Column="2"
+        <Button x:Name="LunisolarButton"
+                Grid.Column="2"
                 Grid.Row="3"
                 Content="+/-" 
                 Width="75"
                 Height="75"/>
-        <Button Grid.Column="3"
+        <Button x:Name="PercentButton"
+                Grid.Column="3"
                 Grid.Row="3"
                 Content="%" 
                 Width="75"
@@ -67,51 +72,60 @@
                 Grid.Row="3"
                 Content="/" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="OperatorButton('/')"/>
 
         <!--Row 4-->
         <Button Grid.Column="1"
                 Grid.Row="4"
                 Content="7" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(7)"/>
         <Button Grid.Column="2"
                 Grid.Row="4"
                 Content="8" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(8)"/>
         <Button Grid.Column="3"
                 Grid.Row="4"
                 Content="9" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(9)"/>
         <Button Grid.Column="4"
                 Grid.Row="4"
                 Content="*" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="OperatorButton('*')"/>
         
         <!--Row 5-->
         <Button Grid.Column="1"
                 Grid.Row="5"
                 Content="4" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(4)"/>
         <Button Grid.Column="2"
                 Grid.Row="5"
                 Content="5" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(5)"/>
         <Button Grid.Column="3"
                 Grid.Row="5"
                 Content="6" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(6)"/>
         <Button Grid.Column="4"
                 Grid.Row="5"
                 Content="-" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="OperatorButton('-')"/>
         
         <!--Row 6-->
         <Button 
@@ -119,25 +133,30 @@
                 Grid.Row="6"
                 Content="1" 
                 Width="75"
-                Height="75"/>
+                Height="75" 
+                cal:Message.Attach="NumberButton(1)"/>
         <Button Grid.Column="2"
                 Grid.Row="6"
                 Content="2" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(2)"/>
         <Button Grid.Column="3"
                 Grid.Row="6"
                 Content="3" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(3)"/>
         <Button Grid.Column="4"
                 Grid.Row="6"
                 Content="+" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="OperatorButton('+')"/>
         
         <!--Row 7-->
-        <Button Grid.Column="1"
+        <Button x:Name="DotButton"
+                Grid.Column="1"
                 Grid.Row="7"
                 Content="." 
                 Width="75"
@@ -146,13 +165,15 @@
                 Grid.Row="7"
                 Content="0" 
                 Width="75"
-                Height="75"/>
+                Height="75"
+                cal:Message.Attach="NumberButton(0)"/>
         <Button Grid.Column="3"
                 Grid.Row="7"
                 Content="Del" 
                 Width="75"
                 Height="75"/>
-        <Button Grid.Column="4"
+        <Button x:Name="EqualButton"
+                Grid.Column="4"
                 Grid.Row="7"
                 Content="=" 
                 Width="75"
