@@ -71,14 +71,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\ToDoModel.cs" />
+    <Compile Include="ViewModels\CalculatorChildViewModel.cs" />
     <Compile Include="ViewModels\CalendarChildViewModel.cs" />
     <Compile Include="ViewModels\DashboardChildViewModel.cs" />
     <Compile Include="ViewModels\LoginChildViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegistrationChildViewModel.cs" />
     <Compile Include="ViewModels\TodoChildViewModel.cs" />
+    <Compile Include="Views\CalculatorChildView.xaml.cs">
+      <DependentUpon>CalculatorChildView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CalendarChildView.xaml.cs">
       <DependentUpon>CalendarChildView.xaml</DependentUpon>
     </Compile>
@@ -128,6 +133,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\CalculatorChildView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CalendarChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

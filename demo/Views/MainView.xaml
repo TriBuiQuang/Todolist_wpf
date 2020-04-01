@@ -24,6 +24,7 @@
             <Button x:Name="LoadPageLogin" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat" >Login</Button>
             <Button x:Name="LoadPageCalendar" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">Calendar</Button>
             <Button x:Name="LoadPageTodo" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">Todo</Button>
+            <Button x:Name="LoadPageCalculator" Background="#FF2C2A2A" BorderBrush="Transparent" Foreground="Wheat">Calculator</Button>
         </StackPanel>
        
         <!--Column 2-->
