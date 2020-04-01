@@ -4,10 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:demo.Views"
-             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:cal="http://www.caliburnproject.org" xmlns:local1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
              mc:Ignorable="d" Background="Black" Foreground="White"
              d:DesignHeight="450" d:DesignWidth="800">
-    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local1:BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -24,7 +28,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <!--Row 1-->
-        <TextBlock Text="To Do:" FontSize="24" 
+        <TextBlock Text="To Do" FontSize="24" TextAlignment="Center"
                    Grid.Column="1" Grid.Row="1" FontWeight="Bold"/>
         <!--Row 2-->
         <ItemsControl Grid.Row="2" Grid.Column="1" x:Name="listTodo" ItemsSource="{Binding ToDo, UpdateSourceTrigger=PropertyChanged}">
@@ -39,31 +43,31 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="200" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding Id}"/>
                         <TextBlock Grid.Column="1" Text="{Binding Name}"/>
-                        <TextBlock Grid.Column="2" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" x:Name="MyVisibility" TextWrapping="Wrap"/>
                         <TextBlock Grid.Column="3" Text="{Binding CreatedDate}"/>
                         <TextBlock Grid.Column="4" Text="{Binding UpdatedDate}"/>
-                        <CheckBox Grid.Column="5" IsChecked="{Binding Complete, Mode=TwoWay}" />
+                        <CheckBox Grid.Column="5" IsChecked="{Binding Complete, Mode=TwoWay}"  VerticalAlignment="Center"/>
                         
                         <Button Grid.Column="6" Content="Edit"
-                                cal:Message.Attach="EditTodo($dataContext)" />
+                                cal:Message.Attach="EditTodo($dataContext)" BorderBrush="Transparent" Background="Transparent" Foreground="Blue" />
                         <!--<Button 
                             Grid.Column="7"
                             Content="{Binding Id}"
                             Command="{Binding DeleteTodo}"
                             CommandParameter="{Binding Id}"
                         />-->
-                        <Button Grid.Column="7" Content="Remove"
-                                cal:Message.Attach="DeleteTodo($dataContext)" />
+                        <Button Grid.Column="7" Content="x"
+                                cal:Message.Attach="DeleteTodo($dataContext)" BorderBrush="Transparent" Foreground="Red" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,5"/>
                     </Grid>
                    
                 </DataTemplate>
@@ -78,7 +82,9 @@
             </Grid.ColumnDefinitions>
             <TextBox 
                 x:Name="TxtAddBlock"/>
-            <Button x:Name="AddTodo" Grid.Column="1" Content="Add Task"/>
+            <TextBox 
+                x:Name="TxtTodo" Visibility="Hidden"/>
+            <Button x:Name="AddTodo" Grid.Column="1" Content="{Binding ContentAddToDo}"/>
         </Grid>
     </Grid>
 </UserControl>

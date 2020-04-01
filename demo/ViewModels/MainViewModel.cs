@@ -7,7 +7,6 @@ namespace demo.ViewModels
         //this is contructor
         public MainViewModel()
         {
-
             LoadPageDashBoard();
         }
 
