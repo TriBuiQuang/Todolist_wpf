@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:demo.Views"
-        mc:Ignorable="d" Background="#FF2C2A2A" Foreground="White" FontSize="20"
-        Title="Todo list" Height="650" Width="800">
+        mc:Ignorable="d" Background="#FF2C2A2A" FontSize="20"
+        Title="Todo list" Height="650" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
