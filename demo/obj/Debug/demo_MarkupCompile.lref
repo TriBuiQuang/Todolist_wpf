@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< bdc807592eaba54c479355fd922283bb75dfe22c
 FD:\demo_wpf\Todolist_wpf\demo\App.xaml;;
 FD:\demo_wpf\Todolist_wpf\demo\Views\CalculatorChildView.xaml;;
 FD:\demo_wpf\Todolist_wpf\demo\Views\CalendarChildView.xaml;;
@@ -7,4 +8,13 @@ FD:\demo_wpf\Todolist_wpf\demo\Views\LoginChildView.xaml;;
 FD:\demo_wpf\Todolist_wpf\demo\Views\MainView.xaml;;
 FD:\demo_wpf\Todolist_wpf\demo\Views\RegistrationChildView.xaml;;
 FD:\demo_wpf\Todolist_wpf\demo\Views\TodoChildView.xaml;;
+=======
+FD:\C#\Todolist_wpf\demo\App.xaml;;
+FD:\C#\Todolist_wpf\demo\Views\CalendarChildView.xaml;;
+FD:\C#\Todolist_wpf\demo\Views\DashboardChildView.xaml;;
+FD:\C#\Todolist_wpf\demo\Views\LoginChildView.xaml;;
+FD:\C#\Todolist_wpf\demo\Views\MainView.xaml;;
+FD:\C#\Todolist_wpf\demo\Views\RegistrationChildView.xaml;;
+FD:\C#\Todolist_wpf\demo\Views\TodoChildView.xaml;;
+>>>>>>> Login Page
 
