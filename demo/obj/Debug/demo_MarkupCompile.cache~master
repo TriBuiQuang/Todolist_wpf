@@ -1,0 +1,33 @@
+﻿demo
+
+
+winexe
+C#
+.cs
+<<<<<<< bdc807592eaba54c479355fd922283bb75dfe22c
+D:\demo_wpf\Todolist_wpf\demo\obj\Debug\
+=======
+D:\C#\Todolist_wpf\demo\obj\Debug\
+>>>>>>> Login Page
+demo
+none
+false
+DEBUG;TRACE
+<<<<<<< bdc807592eaba54c479355fd922283bb75dfe22c
+D:\demo_wpf\Todolist_wpf\demo\App.xaml
+7-1570656118
+
+21-765483851
+121-1079821158
+Views\CalculatorChildView.xaml;Views\CalendarChildView.xaml;Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;Views\TodoChildView.xaml;
+=======
+D:\C#\Todolist_wpf\demo\App.xaml
+6-2070630430
+
+20186257448
+1211646471588
+Views\CalendarChildView.xaml;Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;Views\TodoChildView.xaml;
+>>>>>>> Login Page
+
+False
+
