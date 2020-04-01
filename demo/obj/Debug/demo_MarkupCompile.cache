@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Working\wpf\demo\demo\obj\Debug\
+D:\C#\Todolist_wpf\demo\obj\Debug\
 demo
 none
 false
 DEBUG;TRACE
-D:\Working\wpf\demo\demo\App.xaml
+D:\C#\Todolist_wpf\demo\App.xaml
 6-2070630430
 
-19901240613
-1211560946735
+20186257448
+1211646471588
 Views\CalendarChildView.xaml;Views\DashboardChildView.xaml;Views\LoginChildView.xaml;Views\MainView.xaml;Views\RegistrationChildView.xaml;Views\TodoChildView.xaml;
 
 False
