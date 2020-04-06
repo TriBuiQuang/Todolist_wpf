@@ -10,15 +10,15 @@ namespace demo.ViewModels
 {
     class LoginChildViewModel : Screen
     {
-		private string _userName;
+		private string _email;
 		private string _password;
-		public string Username
+		public string Email
 		{
-			get { return _userName; }
+			get { return _email; }
 			set 
 			{
-				_userName = value;
-				NotifyOfPropertyChange(() => Username);
+				_email = value;
+				NotifyOfPropertyChange(() => Email);
 				NotifyOfPropertyChange(() => CanLogIn);
 			}
 		}
@@ -38,7 +38,7 @@ namespace demo.ViewModels
 			get
 			{
 				bool output = false;
-				if (Username?.Length > 0 && Password?.Length > 0)
+				if (Email?.Length > 0 && Password?.Length > 0)
 				{
 					output = true;
 				}
@@ -48,9 +48,12 @@ namespace demo.ViewModels
 
 		public void LogIn()
 		{
-			if (Username == "Hoang" && Password == "123")
+			if (Email == "hoang@gmail.com" && Password == "Hoang@1234")
 			{
-				MessageBox.Show("Log in success");
+				//MessageBox.Show("Log in success");
+				var conductor = this.Parent as IConductor;
+				conductor.ActivateItem(new TodoChildViewModel());
+
 			} else
 			{
 				MessageBox.Show("Log in fail");
