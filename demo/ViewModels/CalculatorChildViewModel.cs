@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using demo.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,11 +13,9 @@ namespace demo.ViewModels
     class CalculatorChildViewModel : Screen
     {
         private string _expression;
-        private string _result;
-        private float _firstOperand;
-        private float _secondOperand;
+        private Operand _firstOperand;
+        private Operand _secondOperand;
         private string _operator;
-        private bool _isDotted;
 
         public string Expression
         {
@@ -30,28 +29,26 @@ namespace demo.ViewModels
 
         public string Result
         {
-            get 
-            { 
+            get
+            {
                 if (String.IsNullOrEmpty(Operator))
                 {
-                    return $"{String.Format("{0:0.########}", FirstOperand)}{(IsDotted == true && String.IsNullOrEmpty(Operator) ? "." : "")}";
+                    return FirstOperand.FullPart;
                 }
                 else
                 {
-                    return $"{String.Format("{0:0.########}", FirstOperand)}{(IsDotted == true && String.IsNullOrEmpty(Operator) ? "." : "")} " +
-                    $"{_operator} " +
-                    $"{String.Format("{0:0.########}", SecondOperand)}{(IsDotted == true && !String.IsNullOrEmpty(Operator) ? "." : "")}";
+                    return FirstOperand.FullPart +
+                    $" {_operator} " +
+                    SecondOperand.FullPart;
                 }
-                
             }
             set 
             { 
-                _result = value;
                 NotifyOfPropertyChange(() => Result);
             }
         }
 
-        public float FirstOperand
+        public Operand FirstOperand
         {
             get { return _firstOperand; }
             set 
@@ -61,7 +58,7 @@ namespace demo.ViewModels
             }
         }
 
-        public float SecondOperand
+        public Operand SecondOperand
         {
             get { return _secondOperand; }
             set 
@@ -81,16 +78,6 @@ namespace demo.ViewModels
             }
         }
 
-        public bool IsDotted
-        {
-            get { return _isDotted; }
-            set 
-            { 
-                _isDotted = value;
-                NotifyOfPropertyChange(() => Result);
-            }
-        }
-
         public CalculatorChildViewModel()
         {
             ACButton();
@@ -102,24 +89,11 @@ namespace demo.ViewModels
             {
                 if (String.IsNullOrWhiteSpace(Operator))
                 {
-                    string strBuffer = FirstOperand.ToString();
-                    if (IsDotted == true)
-                    {
-                        strBuffer = String.Concat(strBuffer, ".", number);
-                        FirstOperand = Convert.ToSingle(strBuffer);
-                        IsDotted = false;
-                    }
-                    else
-                    {
-                        strBuffer = String.Concat(strBuffer, number);
-                        FirstOperand = Convert.ToSingle(strBuffer);
-                    }
+                    FirstOperand += number;
                 }
                 else
                 {
-                    string strBuffer = SecondOperand.ToString();
-                    strBuffer = String.Concat(strBuffer, number);
-                    SecondOperand = Convert.ToSingle(strBuffer);
+                    SecondOperand += number;
                 }
             } 
             catch (Exception e)
@@ -129,92 +103,133 @@ namespace demo.ViewModels
             
             
         }
+
         public void OperatorButton(string _operator)
         {
-            Debug.WriteLine(_operator);
             Operator = _operator;
         }
 
         public void DotButton()
         {
-            IsDotted = true;
+            if (String.IsNullOrWhiteSpace(Operator))
+            {
+                FirstOperand.IsDotted = true;
+            } 
+            else
+            {
+                SecondOperand.IsDotted = true;
+            }
+            NotifyOfPropertyChange(() => Result);
         }
 
         public void EqualButton()
         {
-            float result;
+            decimal result;
             Expression = Result;
             try
             {
                 switch (Operator)
                 {
                     case "+":
-                        result = FirstOperand + SecondOperand;
-                        SecondOperand = 0;
-                        FirstOperand = result;
+                        result = Convert.ToDecimal(FirstOperand.FullPart) + Convert.ToDecimal(SecondOperand.FullPart);
+                        SecondOperand = new Operand();
+                        FirstOperand.Equal(result);
                         Operator = "";
                         break;
                     case "-":
-                        result = FirstOperand - SecondOperand;
-                        SecondOperand = 0;
-                        FirstOperand = result;
+                        result = Convert.ToDecimal(FirstOperand.FullPart) - Convert.ToDecimal(SecondOperand.FullPart);
+                        SecondOperand = new Operand();
+                        FirstOperand.Equal(result);
                         Operator = "";
                         break;
                     case "*":
-                        result = FirstOperand * SecondOperand;
-                        SecondOperand = 0;
-                        FirstOperand = result;
+                        result = Convert.ToDecimal(FirstOperand.FullPart) * Convert.ToDecimal(SecondOperand.FullPart);
+                        SecondOperand = new Operand();
+                        FirstOperand.Equal(result);
                         Operator = "";
                         break;
                     case "/":
-                        result = FirstOperand / SecondOperand;
-                        SecondOperand = 0;
-                        FirstOperand = result;
+                        result = Convert.ToDecimal(FirstOperand.FullPart) / Convert.ToDecimal(SecondOperand.FullPart);
+                        SecondOperand = new Operand();
+                        FirstOperand.Equal(result);
                         Operator = "";
                         break;
                     default:
                         return;
                 }
-                IsDotted = false;
+                NotifyOfPropertyChange(() => Result);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         public void PercentButton()
         {
             if (String.IsNullOrEmpty(Operator))
             {
-                FirstOperand = (FirstOperand == 0 ? (float)(1f / 100f) : (float)(FirstOperand / 100));
-            } 
+                decimal result = Convert.ToDecimal(FirstOperand.FullPart);
+                result = (result == 0 ? (decimal)(1f / 100f) : (decimal)(result / 100));
+                FirstOperand.Equal(result);
+            }
             else
             {
-                SecondOperand = (SecondOperand == 0 ? (float)(1f / 100f) : (float)(SecondOperand / 100));
+                decimal result = Convert.ToDecimal(SecondOperand.FullPart);
+                result = (result == 0 ? (decimal)(1f / 100f) : (decimal)(result / 100));
+                SecondOperand.Equal(result);
             }
+            NotifyOfPropertyChange(() => Result);
         }
 
         public void LunisolarButton()
         {
             if (String.IsNullOrEmpty(Operator))
             {
-                FirstOperand = FirstOperand * -1;
+                if (FirstOperand.IsNegative == true)
+                {
+                    FirstOperand.IsNegative = false;
+                }
+                else 
+                {
+                    FirstOperand.IsNegative = true;
+                }  
             }
             else
             {
-                SecondOperand = SecondOperand * -1;
+                if (SecondOperand.IsNegative == true)
+                {
+                    SecondOperand.IsNegative = false;
+                }
+                else
+                {
+                    SecondOperand.IsNegative = true;
+                }
+            }
+            NotifyOfPropertyChange(() => Result);
+        }
+
+        public void DelButton()
+        {
+            if (String.IsNullOrEmpty(Operator))
+            {
+                FirstOperand.Del();
+                NotifyOfPropertyChange(() => Result);
+            }
+            else
+            {
+                SecondOperand.Del();
+                NotifyOfPropertyChange(() => Result);
             }
         }
 
         public void ACButton()
         {
-            FirstOperand = 0;
-            SecondOperand = 0;
+            FirstOperand = new Operand();
+            SecondOperand = new Operand();
             Operator = "";
             Expression = "";
-            IsDotted = false;
         }
 
     }
