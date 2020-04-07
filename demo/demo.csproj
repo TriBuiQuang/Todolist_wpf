@@ -78,6 +78,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
+    <Compile Include="Models\Operand.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\ToDoModel.cs" />
     <Compile Include="ViewModels\CalculatorChildViewModel.cs" />

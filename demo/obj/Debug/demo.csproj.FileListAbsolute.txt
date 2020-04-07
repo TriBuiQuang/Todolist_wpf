@@ -182,3 +182,9 @@ D:\C#\Todolist_wpf\demo\obj\Debug\demo.pdb
 >>>>>>> Login Page
 D:\C#\Todolist_wpf\demo\obj\Debug\Views\CalculatorChildView.g.cs
 D:\C#\Todolist_wpf\demo\obj\Debug\Views\CalculatorChildView.baml
+C:\Users\admin\Documents\WPF\Todolist_wpf\demo\bin\Debug\LiveCharts.dll
+C:\Users\admin\Documents\WPF\Todolist_wpf\demo\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\admin\Documents\WPF\Todolist_wpf\demo\bin\Debug\LiveCharts.pdb
+C:\Users\admin\Documents\WPF\Todolist_wpf\demo\bin\Debug\LiveCharts.xml
+C:\Users\admin\Documents\WPF\Todolist_wpf\demo\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\admin\Documents\WPF\Todolist_wpf\demo\bin\Debug\LiveCharts.Wpf.xml
